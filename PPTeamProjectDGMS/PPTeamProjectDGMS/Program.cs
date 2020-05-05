@@ -10,6 +10,38 @@ namespace PPTeamProjectDGMS
     {
         static void Main(string[] args)
         {
+ 
         }
+        static void Glen()
+        {
+
+
+
+        }
+
+        static void Saniya()
+        {
+
+
+
+
+
+        }
+
+        static void Mathew()
+        {
+
+
+
+        }
+
+        static void Dhugald()
+        {
+
+
+
+        }
+
+
     }
 }
