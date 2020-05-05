@@ -10,7 +10,7 @@ namespace PPTeamProjectDGMS
     {
         static void Main(string[] args)
         {
- 
+            Dhugald();
         }
         static void Glen()
         {
@@ -38,7 +38,8 @@ namespace PPTeamProjectDGMS
         static void Dhugald()
         {
 
-
+            Console.WriteLine("Test");
+            Console.ReadLine();
 
         }
 
