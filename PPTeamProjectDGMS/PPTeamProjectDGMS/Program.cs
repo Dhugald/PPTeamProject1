@@ -18,15 +18,15 @@ namespace PPTeamProjectDGMS
             string answer1 = Console.ReadLine().ToLower();
             if (answer1.Contains("family") || answer1.Contains("parent") || answer1.Contains("sibling"))
             {
-
+                Glen();
             }
-            else if(answer1.Contains("friends"))
+            else if(answer1.Contains("friends") || answer1.Contains("friend") || answer1.Contains(""))
             {
-
+                Saniya();
             }
-            else if (answer1.Contains("relationships"))
+            else if (answer1.Contains("relationships") || answer1.Contains("relationship") || answer1.Contains("partner"))
             {
-
+                Mathew();
             }
             else
             {
@@ -39,13 +39,16 @@ namespace PPTeamProjectDGMS
         static void Glen()
         {
 
-            //test 123
+            Console.WriteLine("Test family");
+            Console.ReadLine();
 
         }
 
         static void Saniya()
         {
 
+            Console.WriteLine("Test friends");
+            Console.ReadLine();
 
 
 
@@ -55,15 +58,16 @@ namespace PPTeamProjectDGMS
         static void Mathew()
         {
 
-            //Mathew test
+            Console.WriteLine("Test relationship");
+            Console.ReadLine();
 
         }
 
         static void Dhugald()
         {
 
-            Console.WriteLine("Test");
-            Console.ReadLine();
+           Console.WriteLine("Test other");
+           Console.ReadLine();
 
         }
 
