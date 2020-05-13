@@ -137,9 +137,34 @@ namespace PPTeamProjectDGMS
         static void Mathew()
         {
 
-            Console.WriteLine("Test relationship");
-            Console.ReadLine();
+            Console.WriteLine("Therapist: Ok so you have relationship issues, tell me are you married/in a civil union? (yes/no)");
+            string relationshipLength = Console.ReadLine().ToLower();
 
+            if (relationshipLength == "yes")
+            {
+                Console.WriteLine("Therapist: And how many years have you been together?");
+                int yearsTogether = Convert.ToInt32(Console.ReadLine());
+            }
+
+            Console.WriteLine("Theripist: Ok, so what is the issue you have with the relationship?");
+            string relationshipIssue = Console.ReadLine().ToLower();
+
+            if (relationshipIssue.Contains("money") || relationshipIssue.Contains("financial") || relationshipIssue.Contains("bank account"))
+            {
+                //Money();
+            }
+            else if (relationshipIssue.Contains("communcation") || relationshipIssue.Contains("talking"))
+            {
+                //Communication();
+            }
+            else if (relationshipIssue.Contains("fight") || relationshipIssue.Contains("fighting") || relationshipIssue.Contains("contest"))
+            {
+                //Fight()
+            }
+            else
+            {
+                //enter default message here
+            }
         }
 
         static void Dhugald()
