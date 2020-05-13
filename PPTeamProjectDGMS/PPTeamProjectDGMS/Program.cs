@@ -8,10 +8,11 @@ namespace PPTeamProjectDGMS
 {
     class Program
     {
+        public static string name;
         static void Main(string[] args)
         {
             Console.Write("Please enter your name: ");
-            string name = Console.ReadLine();
+            name = Console.ReadLine();
             Console.Clear();
 
             Opener();
@@ -28,7 +29,7 @@ namespace PPTeamProjectDGMS
             {
                 Glen();
             }
-            else if (answer1.Contains("friends") || answer1.Contains("friend") || answer1.Contains(""))
+            else if (answer1.Contains("friends") || answer1.Contains("friend"))
             {
                 Saniya();
             }
