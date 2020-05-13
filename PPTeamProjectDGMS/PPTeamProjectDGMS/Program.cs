@@ -14,13 +14,21 @@ namespace PPTeamProjectDGMS
             string name = Console.ReadLine();
             Console.Clear();
 
+            Opener();
+
+
+            
+        }
+
+        static void Opener()
+        {
             Console.WriteLine($"Therapist: Hello {name}, my name is Judy and I'm a therapist specializing in relatioships, What brings you in today?");
             string answer1 = Console.ReadLine().ToLower();
             if (answer1.Contains("family") || answer1.Contains("parent") || answer1.Contains("sibling"))
             {
                 Glen();
             }
-            else if(answer1.Contains("friends") || answer1.Contains("friend") || answer1.Contains(""))
+            else if (answer1.Contains("friends") || answer1.Contains("friend") || answer1.Contains(""))
             {
                 Saniya();
             }
@@ -32,9 +40,6 @@ namespace PPTeamProjectDGMS
             {
                 Dhugald();
             }
-
-
-            
         }
         static void Glen()
         {
@@ -105,7 +110,7 @@ namespace PPTeamProjectDGMS
             }
             else
             {
-                // Take them back to the first Question that asks them what they are here for
+                Opener();
             }
 
         }
