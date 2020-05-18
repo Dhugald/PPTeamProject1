@@ -136,14 +136,18 @@ namespace PPTeamProjectDGMS
 
         static void Mathew()
         {
-
+            int yearsTogether;
             Console.WriteLine("Therapist: Ok so you have relationship issues, tell me are you married/in a civil union? (yes/no)");
             string relationshipLength = Console.ReadLine().ToLower();
 
             if (relationshipLength == "yes")
             {
                 Console.WriteLine("Therapist: And how many years have you been together?");
-                int yearsTogether = Convert.ToInt32(Console.ReadLine());
+                yearsTogether = Convert.ToInt32(Console.ReadLine());
+            }
+            else
+            {
+                yearsTogether = 0;
             }
 
             Console.WriteLine("Theripist: Ok, so what is the issue you have with the relationship?");
@@ -151,7 +155,7 @@ namespace PPTeamProjectDGMS
 
             if (relationshipIssue.Contains("money") || relationshipIssue.Contains("financial") || relationshipIssue.Contains("bank account"))
             {
-                //Money();
+                Money(yearsTogether);
             }
             else if (relationshipIssue.Contains("communcation") || relationshipIssue.Contains("talking"))
             {
@@ -164,6 +168,33 @@ namespace PPTeamProjectDGMS
             else
             {
                 //enter default message here
+            }
+        }
+
+        static void Money(int yearsMarried)
+        {
+            Console.WriteLine("Therapist: How many years has this been an issue?");
+            int problemLength = Convert.ToInt32(Console.ReadLine());
+
+            if(yearsMarried < problemLength)
+            {
+                Console.WriteLine("Therapist: So this has been an issue for longer than you have been married.");
+            }
+
+            Console.WriteLine("Therapist: What spesificly is the issue with money");
+            string moneyIssue = Console.ReadLine().ToLower().Trim();
+
+            if(moneyIssue.Contains("not enough") || moneyIssue.Contains("poor") || moneyIssue.Contains("need more") || moneyIssue.Contains("saving"))
+            {
+                Console.WriteLine("Therapist: I suggest setting up a savings plan or possibly talking to your bank aboput your options");
+            }
+            else if(moneyIssue.Contains("spends too much") || moneyIssue.Contains("dosent allow me to spend") || moneyIssue.Contains("restrictive") || moneyIssue.Contains("No acsess"))
+            {
+                Console.WriteLine("Therapist: I think you need to talk to your partner about being more fair with money");
+            }
+            else
+            {
+                Console.WriteLine("Therapist: Im sorry, I dont think i can help you with that");
             }
         }
 
