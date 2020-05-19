@@ -9,6 +9,8 @@ namespace PPTeamProjectDGMS
     class Program
     {
         public static string name;
+        public static string answer1;
+
         static void Main(string[] args)
         {
             Console.Write("Please enter your name: ");
@@ -24,7 +26,8 @@ namespace PPTeamProjectDGMS
         static void Opener()
         {
             Console.WriteLine($"Therapist: Hello {name}, my name is Judy and I'm a therapist specializing in relatioships, What brings you in today?");
-            string answer1 = Console.ReadLine().ToLower();
+            Console.Write($"{name}: ");
+            answer1 = Console.ReadLine().ToLower();
             if (answer1.Contains("family") || answer1.Contains("parent") || answer1.Contains("sibling"))
             {
                 Glen();
@@ -200,12 +203,81 @@ namespace PPTeamProjectDGMS
 
         static void Dhugald()
         {
+            Console.WriteLine("Therapist: Have you ever seen a counselor before? (Y/N)");
+            Console.Write($"{name}: ");
+            string beenBefore = Console.ReadLine().ToLower();
 
-           Console.WriteLine("Test other");
-           Console.ReadLine();
+            if (beenBefore.Contains("y") || beenBefore.Contains("yes") || beenBefore.Contains("ye"))
+            {
+                Console.WriteLine("Therapist: Well then, what is the problem from your viewpoint");
+                Console.Write($"{name}: ");
+                string answer = Console.ReadLine().ToLower();
+                if (answer1.Contains("family") || answer1.Contains("parent") || answer1.Contains("sibling"))
+                {
+                    Glen();
+                }
+                else if (answer1.Contains("friends") || answer1.Contains("friend"))
+                {
+                    Saniya();
+                }
+                else if (answer1.Contains("relationships") || answer1.Contains("relationship") || answer1.Contains("partner"))
+                {
+                    Mathew();
+                }
+            }
+            else
+            {
+                Console.WriteLine($"Therapist: Well, {name}, on a scale of 0-10 how content are you with life?");
+                int scale = Convert.ToInt32(Console.ReadLine());
+                switch (scale)
+                {
+                    case 0:
+                    case 1:
+                    case 2:
+                    case 3:
+                        Console.WriteLine($"Therapist: This isnt ideal, your going to need more help, I reccommend you come and see me once a week.");
+                        defaultConverstion();
+                        break;
+                    case 4:
+                    case 5:
+                    case 6:
+                        Console.WriteLine($"Therapist: So this issue is affecting you and I can see you need help.");
+                        defaultConverstion();
+                        break;
+                    case 7:
+                    case 8:
+                    case 9:
+                        Console.WriteLine($"Therapist: So I can see the issue isnt huge but you obviously still want help.");
+                        defaultConverstion();
+                        break;
+                    case 10:
+                        Console.WriteLine($"Therapist: Okay {name}, you sound pretty content with life, whats the point of going to a therapist?");
+
+                        break;
+                    default:
+                        Console.WriteLine($"Therapist: Are you going to answer me?");
+                        break;
+                }
+            }
+    
+
 
         }
 
+        public static void defaultConverstion()
+        {
+            Console.WriteLine($"Therapist: So {name} how often do you have your issue?");
+            Console.Write($"{name}: ");
+            Console.ReadLine();
+            Console.WriteLine($"Therapist: and what makes the problem better for you?");
+            Console.Write($"{name}: ");
+            Console.ReadLine();
+            Console.WriteLine($"Therapist: Is your mood like a roller coaster, or is it pretty steady?");
+            Console.Write($"{name}: ");
+            Console.ReadLine();
+
+
+        }
 
     }
 }
