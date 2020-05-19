@@ -8,6 +8,9 @@ namespace PPTeamProjectDGMS
 {
     class Program
     {
+       
+        
+
         public static string name;
         public static string answer1;
 
@@ -72,98 +75,262 @@ namespace PPTeamProjectDGMS
                 Opener();
             }
 
-
-
         }
 
-        static void Mother()
+        // mother section
+       static void Mother()
         {
-            Console.WriteLine("Therapist: Answering with a yes or no, do you have a good relationship with you're Mother?");
+            Console.WriteLine("Therapist: And do you love you're mother?");
             string mother1 = Console.ReadLine().ToLower();
             if (mother1.Contains("yes"))
             {
-                Mother1Yes();
+                MotherPath1();
+            }
+            else if (mother1.Contains("no"))
+            {
+                MotherPath2();
             }
             else
             {
-                Mother1No();
+                NextSessVer();
             }
-
         }
 
-
-        static void Mother1Yes()
+      static void MotherPath1()
         {
-            Console.WriteLine("Therapist: So you have a good relationship with you're mother thats good to hear");
-            Console.WriteLine("Therapist: Is there any other family member you wish to talk about today?");
-            string motherYes = Console.ReadLine().ToLower();
-            if (motherYes.Contains("No"))
-            {
-
+           
+            Console.WriteLine("\nTherapist: Thats good to hear, Going forward I would like you to be aware of a few guidlines for our future sessions\n\n");
+            Console.WriteLine("Therapist: What you say falls under doctor-patient confidentiality which in turn allows patients like yourself");
+            Console.WriteLine("Therapist: To speak about subjects which at first may bring a sense of shame or fear, but being you're therapist it is important we have this trust going forward\n");
+            Console.WriteLine("\nTherapist: So with that out of the way shall we continue?");
+            string nextTime = Console.ReadLine().ToLower();
+            if (nextTime.Contains("yes") || (nextTime.Contains("sure")))
+                {
+                NextSession();
             }
-            else if (motherYes.Contains("father") || motherYes.Contains("dad"))
+            else
             {
-                Father();
+                NextSessVer();
             }
-            else if (motherYes.Contains("sister"))
-            {
-                Sister();
-            }
-            else if (motherYes.Contains("brother"))
-            {
-                Brother();
-            }
-            else if (motherYes.Contains("No"))
-            {
-                EndingNo();
-            }
-
+          
         }
 
-        static void EndingNo()
+    static void MotherPath2()
         {
-            Console.WriteLine("");
+            Console.WriteLine("\nTherapist: I'm sorry to hear that, before we begin I would like you to be aware of a few guidlines for our future sessions\n\n");
+            Console.WriteLine("Therapist: What you say falls under doctor-patient confidentiality which in turn allows patients like yourself");
+            Console.WriteLine("Therapist: To speak about subjects which at first may bring a sense of shame or fear, but being you're therapist it is important we have this trust going forward\n");
+            Console.WriteLine("\nTherapist: So with that out of the way let us continue");
+            string nextTime = Console.ReadLine().ToLower();
+            if (nextTime.Contains("yes") || (nextTime.Contains("sure")))
+            {
+                NextSession();
+            }
+            else
+            {
+                NextSessVer();
+            }
+
         }
 
-        static void Mother1No()
-        {
-            Console.WriteLine("Therapist: And from your viewpoint what is the problem with you're current relationship?");
-        }
-
-
-
-
-
-
-
+        // FATHER SECTION
 
         static void Father()
         {
-            Console.WriteLine("Therapist: And do you have a good relationship with you're Mother?");
+            Console.WriteLine("Therapist: And do you love you're Father?");
             string father1 = Console.ReadLine().ToLower();
+            if (father1.Contains("yes"))
+            {
+                FatherPath1();
+            }
+            else if (father1.Contains("no"))
+            {
+                FatherPath2();
+            }
+            else
+            {
+                NextSessVer();
+            }
+        }
+
+        static void FatherPath1()
+        {
+
+            Console.WriteLine("\nTherapist: Thats good to hear, Going forward I would like you to be aware of a few guidlines for our future sessions\n\n");
+            Console.WriteLine("Therapist: What you say falls under doctor-patient confidentiality which in turn allows patients like yourself");
+            Console.WriteLine("Therapist: To speak about subjects which at first may bring a sense of shame or fear, but being you're therapist it is important we have this trust going forward\n");
+            Console.WriteLine("\nTherapist: So with that out of the way let us continue");
+            string nextTime = Console.ReadLine().ToLower();
+            if (nextTime.Contains("yes") || (nextTime.Contains("sure")))
+            {
+                NextSession();
+            }
+            else
+            {
+                NextSessVer();
+            }
 
         }
+
+        static void FatherPath2()
+        {
+            Console.WriteLine("\nTherapist: I'm sorry to hear that, before we begin I would like you to be aware of a few guidlines for our future sessions\n\n");
+            Console.WriteLine("Therapist: What you say falls under doctor-patient confidentiality which in turn allows patients like yourself");
+            Console.WriteLine("Therapist: To speak about subjects which at first may bring a sense of shame or fear, but being you're therapist it is important we have this trust going forward\n");
+            Console.WriteLine("\nTherapist: So with that out of the way let us continue");
+            string nextTime = Console.ReadLine().ToLower();
+            if (nextTime.Contains("yes") || (nextTime.Contains("sure")))
+            {
+                NextSession();
+            }
+            else
+            {
+                NextSessVer();
+            }
+
+        }
+
+        // SISTER SECTION
+        static void Sister()
+        {
+            Console.WriteLine("Therapist: And do you love you're Sister?");
+            string father1 = Console.ReadLine().ToLower();
+            if (father1.Contains("yes"))
+            {
+                SisterPath1();
+            }
+            else if (father1.Contains("no"))
+            {
+                SisterPath2();
+            }
+            else
+            {
+                NextSessVer();
+            }
+        }
+
+
+
+        static void SisterPath1()
+        {
+
+            Console.WriteLine("\nTherapist: Thats good to hear, Going forward I would like you to be aware of a few guidlines for our future sessions\n\n");
+            Console.WriteLine("Therapist: What you say falls under doctor-patient confidentiality which in turn allows patients like yourself");
+            Console.WriteLine("Therapist: To speak about subjects which at first may bring a sense of shame or fear, but being you're therapist it is important we have this trust going forward\n");
+            Console.WriteLine("\nTherapist: So with that out of the way let us continue");
+            string nextTime = Console.ReadLine().ToLower();
+            if (nextTime.Contains("yes") || (nextTime.Contains("sure")))
+            {
+                NextSession();
+            }
+            else
+            {
+                NextSessVer();
+            }
+
+        }
+
+        static void SisterPath2()
+        {
+            Console.WriteLine("\nTherapist: I'm sorry to hear that, before we begin I would like you to be aware of a few guidlines for our future sessions\n\n");
+            Console.WriteLine("Therapist: What you say falls under doctor-patient confidentiality which in turn allows patients like yourself");
+            Console.WriteLine("Therapist: To speak about subjects which at first may bring a sense of shame or fear, but being you're therapist it is important we have this trust going forward\n");
+            Console.WriteLine("\nTherapist: So with that out of the way let us continue");
+            string nextTime = Console.ReadLine().ToLower();
+            if (nextTime.Contains("yes") || (nextTime.Contains("sure")))
+            {
+                NextSession();
+            }
+            else
+            {
+                NextSessVer();
+            }
+
+        }
+
+        //Brother Section
 
         static void Brother()
         {
-            Console.WriteLine("Therapist: And do you have a good relationship with you're Mother?");
-            string brother1 = Console.ReadLine().ToLower();
+            Console.WriteLine("Therapist: And do you love you're Brother?");
+            string father1 = Console.ReadLine().ToLower();
+            if (father1.Contains("yes"))
+            {
+                BrotherPath1();
+            }
+            else if (father1.Contains("no"))
+            {
+                BrotherPath2();
+            }
+            else
+            {
+                NextSessVer();
+            }
+        }
+
+
+
+        static void BrotherPath1()
+        {
+
+            Console.WriteLine("\nTherapist: Thats good to hear, Going forward I would like you to be aware of a few guidlines for our future sessions\n\n");
+            Console.WriteLine("Therapist: What you say falls under doctor-patient confidentiality which in turn allows patients like yourself");
+            Console.WriteLine("Therapist: To speak about subjects which at first may bring a sense of shame or fear, but being you're therapist it is important we have this trust going forward\n");
+            Console.WriteLine("\nTherapist: So with that out of the way let us continue");
+            string nextTime = Console.ReadLine().ToLower();
+            if (nextTime.Contains("yes") || (nextTime.Contains("sure")))
+            {
+                NextSession();
+            }
+            else
+            {
+                NextSession();
+            }
 
         }
 
-        static void Sister()
+        static void BrotherPath2()
         {
-            Console.WriteLine("Therapist: And do you have a good relationship with you're Sister?");
-            string sister1 = Console.ReadLine().ToLower();
+            Console.WriteLine("\nTherapist: I'm sorry to hear that, before we begin I would like you to be aware of a few guidlines for our future sessions\n\n");
+            Console.WriteLine("Therapist: What you say falls under doctor-patient confidentiality which in turn allows patients like yourself");
+            Console.WriteLine("Therapist: To speak about subjects which at first may bring a sense of shame or fear, but being you're therapist it is important we have this trust going forward\n");
+            Console.WriteLine("\nTherapist: So with that out of the way let us continue");
+            string nextTime = Console.ReadLine().ToLower();
+            if (nextTime.Contains("yes") || (nextTime.Contains("sure")))
+            {
+                NextSession();
+            }        
+            else
+            {
+
+                NextSessVer();
+            }
 
         }
 
-        static void endingNo()
+        static void NextSession()
         {
-
-            Console.WriteLine("Therapist: I'm afraid thats all the time we have for today");
+            Console.WriteLine("Therapist: This was a great start to you're rehabilitation\n");
+            Console.WriteLine("Therapist: Sadly that is all the time we have for today");
+            Console.WriteLine("Therapist: Until next time, I would recommend for you to do some thinking about why you wish you take part in these sessions and what you stand to gain from them");
+            Console.WriteLine("\nTherapist: Have a great day");
             Console.ReadLine();
         }
+
+        static void NextSessVer()
+        {
+            Console.WriteLine("\n\nTherapist: It seems that you are unsure about some things");
+            Console.WriteLine("Therapist: I will reschedule an appointment for you next week");
+            Console.WriteLine("Therapist: Before then, I would like you to review the current relatioships in you're life and think about challenges you are currently facing");
+            Console.WriteLine("Therapist: And then come back here and work through these issues together with me");
+            Console.WriteLine("Therapist: This was a great start to you're rehabilitation\n");
+            Console.WriteLine("Therapist: Sadly that is all the time we have for today");
+            Console.WriteLine("Therapist: Until next time, I would recommend for you to do some thinking about why you wish you take part in these sessions and what you stand to gain from them");
+            Console.WriteLine("Therapist: Have a great day");
+            Console.ReadLine();
+          
+        }
+
         // Glen's Code End
 
         static void Saniya()
