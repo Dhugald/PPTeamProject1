@@ -161,13 +161,13 @@ namespace PPTeamProjectDGMS
             {
                 Communication(yearsTogether);
             }
-            else if (relationshipIssue.Contains("fight") || relationshipIssue.Contains("fighting") || relationshipIssue.Contains("contest"))
+            else if (relationshipIssue.Contains("fight") || relationshipIssue.Contains("fighting") || relationshipIssue.Contains("contest") || relationshipIssue.Contains("argue") || relationshipIssue.Contains("arguing"))
             {
-                //Fight()
+                Fight(yearsTogether);
             }
             else
             {
-                //enter default message here
+                Console.WriteLine("Therapist: Im sorry, I dont think I can help you with that");
             }
         }
 
@@ -218,6 +218,34 @@ namespace PPTeamProjectDGMS
             else if (communicationIssue.Contains("talks too much") || communicationIssue.Contains("shut up") || communicationIssue.Contains("nagging") || communicationIssue.Contains("dosent stop talking"))
             {
                 Console.WriteLine("Therapist: I would suggest spending more time apart than usual for a while week");
+            }
+            else
+            {
+                Console.WriteLine("Therapist: Im sorry, I dont think I can help you with that");
+            }
+
+        }
+
+        static void Fight(int yearsMarried)
+        {
+            Console.WriteLine("Therapist: How many years has this been an issue?");
+            int problemLength = Convert.ToInt32(Console.ReadLine());
+
+            if (yearsMarried < problemLength)
+            {
+                Console.WriteLine("Therapist: So this has been an issue for longer than you have been married.");
+            }
+
+            Console.WriteLine("Therapist: What spesificly is the issue with arguing");
+            string communicationIssue = Console.ReadLine().ToLower().Trim();
+
+            if (communicationIssue.Contains("too much") || communicationIssue.Contains("all the time") || communicationIssue.Contains("always"))
+            {
+                Console.WriteLine("Therapist: I suggest that the next time you feel you are about to fight you go to other rooms and cool off.");
+            }
+            else if (communicationIssue.Contains("nitpick") || communicationIssue.Contains("looks for") || communicationIssue.Contains("goes out of their way"))
+            {
+                Console.WriteLine("Therapist: I would suggest that you stop looking for thing to fight over, and instead look for things to laugh about.");
             }
             else
             {
