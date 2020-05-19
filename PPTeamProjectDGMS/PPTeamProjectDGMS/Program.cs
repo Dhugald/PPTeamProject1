@@ -159,7 +159,7 @@ namespace PPTeamProjectDGMS
             }
             else if (relationshipIssue.Contains("communcation") || relationshipIssue.Contains("talking"))
             {
-                //Communication();
+                Communication(yearsTogether);
             }
             else if (relationshipIssue.Contains("fight") || relationshipIssue.Contains("fighting") || relationshipIssue.Contains("contest"))
             {
@@ -194,8 +194,36 @@ namespace PPTeamProjectDGMS
             }
             else
             {
-                Console.WriteLine("Therapist: Im sorry, I dont think i can help you with that");
+                Console.WriteLine("Therapist: Im sorry, I dont think I can help you with that");
             }
+        }
+
+        static void Communication(int yearsMarried)
+        {
+            Console.WriteLine("Therapist: How many years has this been an issue?");
+            int problemLength = Convert.ToInt32(Console.ReadLine());
+
+            if (yearsMarried < problemLength)
+            {
+                Console.WriteLine("Therapist: So this has been an issue for longer than you have been married.");
+            }
+
+            Console.WriteLine("Therapist: What spesificly is the issue with communication");
+            string communicationIssue = Console.ReadLine().ToLower().Trim();
+
+            if (communicationIssue.Contains("dosent talk") || communicationIssue.Contains("silent") || communicationIssue.Contains("talk more") || communicationIssue.Contains("dosent say anything"))
+            {
+                Console.WriteLine("Therapist: I suggest that you take half an hour every night and talk to each other about you day");
+            }
+            else if (communicationIssue.Contains("talks too much") || communicationIssue.Contains("shut up") || communicationIssue.Contains("nagging") || communicationIssue.Contains("dosent stop talking"))
+            {
+                Console.WriteLine("Therapist: I would suggest spending more time apart than usual for a while week");
+            }
+            else
+            {
+                Console.WriteLine("Therapist: Im sorry, I dont think I can help you with that");
+            }
+
         }
 
         static void Dhugald()
