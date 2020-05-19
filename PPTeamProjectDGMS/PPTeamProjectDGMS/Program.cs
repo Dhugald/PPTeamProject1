@@ -386,9 +386,15 @@ namespace PPTeamProjectDGMS
                 Console.Write($"{name}: ");
                 string meds = Console.ReadLine().ToLower();
                 if (meds.Contains("y") || meds.Contains("yes") || meds.Contains("ye"))
-                { 
-
-                }
+                {
+                    Console.WriteLine($"Therapist: Would you be willing to go on medication again?");
+                    Console.Write($"{name}: ");
+                    string meds2 = Console.ReadLine().ToLower();
+                    if (meds2.Contains("y") || meds2.Contains("yes") || meds2.Contains("ye"))
+                    {
+                        Console.WriteLine($"Therapist: This is great, I'll see you next session {name}");
+                    }
+                    }
                 else if (meds.Contains("n") || meds.Contains("no") || meds.Contains("nope"))
                 {
                     Console.WriteLine($"Therapist: I would highly recommend trying some sort of medication to help with these feelings");
@@ -405,7 +411,13 @@ namespace PPTeamProjectDGMS
                 string meds = Console.ReadLine().ToLower();
                 if (meds.Contains("y") || meds.Contains("yes") || meds.Contains("ye"))
                 {
-
+                    Console.WriteLine($"Therapist: Would you be willing to go on medication again?");
+                    Console.Write($"{name}: ");
+                    string meds2 = Console.ReadLine().ToLower();
+                    if (meds2.Contains("y") || meds2.Contains("yes") || meds2.Contains("ye"))
+                    {
+                        Console.WriteLine($"Therapist: This is great, I'll see you next session {name}");
+                    }
                 }
                 else if (meds.Contains("n") || meds.Contains("no") || meds.Contains("nope"))
                 {
