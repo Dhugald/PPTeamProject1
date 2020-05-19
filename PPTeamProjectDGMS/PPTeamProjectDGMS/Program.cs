@@ -324,11 +324,17 @@ namespace PPTeamProjectDGMS
                 {
                     Mathew();
                 }
+                else
+                {
+                    DhugaldContinue();
+                }
             }
-            else
-            {
-                Console.WriteLine($"Therapist: Well, {name}, on a scale of 0-10 how content are you with life?");
-                int scale = Convert.ToInt32(Console.ReadLine());
+        }
+        public static void DhugaldContinue()
+        {
+            Console.WriteLine($"Therapist: Well, {name}, on a scale of 0-10 how content are you with life?");
+            Console.Write($"{name}: ");
+            int scale = Convert.ToInt32(Console.ReadLine());
                 switch (scale)
                 {
                     case 0:
@@ -358,9 +364,6 @@ namespace PPTeamProjectDGMS
                         Console.WriteLine($"Therapist: Are you going to answer me?");
                         break;
                 }
-            }
-    
-
         }
 
         public static void defaultConverstion()
@@ -374,7 +377,41 @@ namespace PPTeamProjectDGMS
             Console.WriteLine($"Therapist: Is your mood like a roller coaster, or is it pretty steady?");
             Console.Write($"{name}: ");
             Console.ReadLine();
+            Console.WriteLine($"Therapist: Would you say that your main mood be happy, sad, angry?");
+            Console.Write($"{name}: ");
+            string mood = Console.ReadLine().ToLower();
+            if (mood.Contains("sad"))
+            {
+                Console.WriteLine($"Therapist: Have you ever been medicated for this?");
+                Console.Write($"{name}: ");
+                string meds = Console.ReadLine().ToLower();
+                if (meds.Contains("y") || meds.Contains("yes") || meds.Contains("ye"))
+                { 
 
+                }
+                else if (meds.Contains("n") || meds.Contains("no") || meds.Contains("nope"))
+                {
+                    Console.WriteLine($"Therapist: I would highly recommend trying some sort of medication to help with these feelings");
+                }
+            }
+            else if (mood.Contains("happy"))
+            {
+                Console.WriteLine($"Therapist: This is great, I'll see you next session {name}");
+            }
+            else if (mood.Contains("angry"))
+            {
+                Console.WriteLine($"Therapist: Have you ever been medicated for this?");
+                Console.Write($"{name}: ");
+                string meds = Console.ReadLine().ToLower();
+                if (meds.Contains("y") || meds.Contains("yes") || meds.Contains("ye"))
+                {
+
+                }
+                else if (meds.Contains("n") || meds.Contains("no") || meds.Contains("nope"))
+                {
+                    Console.WriteLine($"Therapist: I would highly recommend trying some sort of medication to help with these feelings");
+                }
+            }
 
         }
 
