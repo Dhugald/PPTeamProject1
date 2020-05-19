@@ -190,15 +190,15 @@ namespace PPTeamProjectDGMS
                 yearsTogether = 0;
             }
 
-            Console.WriteLine("Theripist: Ok, so what is the issue you have with the relationship?");
+            Console.WriteLine("Therapist: Ok, so what is the issue you have with the relationship?");
             string relationshipIssue = Console.ReadLine().ToLower();
             if (relationshipIssue.Contains("money") || relationshipIssue.Contains("financial") || relationshipIssue.Contains("bank account"))
             {
                 Money(yearsTogether);
             }
-            else if (relationshipIssue.Contains("communcation") || relationshipIssue.Contains("talking"))
+            else if (relationshipIssue.Contains("communication") || relationshipIssue.Contains("talking") || relationshipIssue.Contains("communicating"))
             {
-                //Communication();
+                Communication(yearsTogether);
             }
             else if (relationshipIssue.Contains("fight") || relationshipIssue.Contains("fighting") || relationshipIssue.Contains("contest") || relationshipIssue.Contains("argue") || relationshipIssue.Contains("arguing"))
             {
@@ -208,6 +208,9 @@ namespace PPTeamProjectDGMS
             {
                 Console.WriteLine("Therapist: Im sorry, I dont think I can help you with that");
             }
+
+            Console.WriteLine("Press enter to exit...");
+            Console.ReadLine();
         }
 
         static void Money(int yearsMarried)
@@ -215,12 +218,12 @@ namespace PPTeamProjectDGMS
             Console.WriteLine("Therapist: How many years has this been an issue?");
             int problemLength = Convert.ToInt32(Console.ReadLine());
 
-            if (yearsMarried < problemLength)
+            if (yearsMarried < problemLength || yearsMarried != 0)
             {
                 Console.WriteLine("Therapist: So this has been an issue for longer than you have been married.");
             }
 
-            Console.WriteLine("Therapist: What spesificly is the issue with money");
+            Console.WriteLine("Therapist: What specifically is the issue with money");
             string moneyIssue = Console.ReadLine().ToLower().Trim();
 
             if (moneyIssue.Contains("not enough") || moneyIssue.Contains("poor") || moneyIssue.Contains("need more") || moneyIssue.Contains("saving"))
@@ -233,22 +236,22 @@ namespace PPTeamProjectDGMS
             }
             else
             {
-                Console.WriteLine("Therapist: Im sorry, I dont think i can help you with that");
+                Console.WriteLine("Therapist: Im sorry, I dont think I can help you with that");
             }
+
         }
 
-<<<<<<< HEAD
         static void Communication(int yearsMarried)
         {
             Console.WriteLine("Therapist: How many years has this been an issue?");
             int problemLength = Convert.ToInt32(Console.ReadLine());
 
-            if (yearsMarried < problemLength)
+            if (yearsMarried < problemLength || yearsMarried != 0)
             {
                 Console.WriteLine("Therapist: So this has been an issue for longer than you have been married.");
             }
 
-            Console.WriteLine("Therapist: What spesificly is the issue with communication");
+            Console.WriteLine("Therapist: What specifically is the issue with communication");
             string communicationIssue = Console.ReadLine().ToLower().Trim();
 
             if (communicationIssue.Contains("dosent talk") || communicationIssue.Contains("silent") || communicationIssue.Contains("talk more") || communicationIssue.Contains("dosent say anything"))
@@ -263,7 +266,7 @@ namespace PPTeamProjectDGMS
             {
                 Console.WriteLine("Therapist: Im sorry, I dont think I can help you with that");
             }
-
+   
         }
 
         static void Fight(int yearsMarried)
@@ -271,12 +274,12 @@ namespace PPTeamProjectDGMS
             Console.WriteLine("Therapist: How many years has this been an issue?");
             int problemLength = Convert.ToInt32(Console.ReadLine());
 
-            if (yearsMarried < problemLength)
+            if (yearsMarried < problemLength || yearsMarried != 0)
             {
                 Console.WriteLine("Therapist: So this has been an issue for longer than you have been married.");
             }
 
-            Console.WriteLine("Therapist: What spesificly is the issue with arguing");
+            Console.WriteLine("Therapist: What specifically is the issue with arguing");
             string communicationIssue = Console.ReadLine().ToLower().Trim();
 
             if (communicationIssue.Contains("too much") || communicationIssue.Contains("all the time") || communicationIssue.Contains("always"))
@@ -292,10 +295,9 @@ namespace PPTeamProjectDGMS
                 Console.WriteLine("Therapist: Im sorry, I dont think I can help you with that");
             }
 
+
         }
 
-=======
->>>>>>> fab5ae49d1b51ea6540b4fe3ce8263b70b6ad715
         static void Dhugald()
         {
 
