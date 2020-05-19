@@ -18,7 +18,7 @@ namespace PPTeamProjectDGMS
             Opener();
 
 
-            
+
         }
 
         static void Opener()
@@ -42,6 +42,7 @@ namespace PPTeamProjectDGMS
                 Dhugald();
             }
         }
+        // Glen's Code Beginning
         static void Glen()
         {
 
@@ -65,68 +66,107 @@ namespace PPTeamProjectDGMS
             }
             else
             {
-                FamilyOther();
+                Opener();
             }
 
-           
-         
+
+
         }
 
         static void Mother()
         {
-            Console.WriteLine("Therapist: Do you have a good relationship with you're Mother?");
-            Console.ReadLine();
-
+            Console.WriteLine("Therapist: Answering with a yes or no, do you have a good relationship with you're Mother?");
+            string mother1 = Console.ReadLine().ToLower();
+            if (mother1.Contains("yes"))
+            {
+                Mother1Yes();
+            }
+            else
+            {
+                Mother1No();
+            }
 
         }
-        
+
+
+        static void Mother1Yes()
+        {
+            Console.WriteLine("Therapist: So you have a good relationship with you're mother thats good to hear");
+            Console.WriteLine("Therapist: Is there any other family member you wish to talk about today?");
+            string motherYes = Console.ReadLine().ToLower();
+            if (motherYes.Contains("No"))
+            {
+
+            }
+            else if (motherYes.Contains("father") || motherYes.Contains("dad"))
+            {
+                Father();
+            }
+            else if (motherYes.Contains("sister"))
+            {
+                Sister();
+            }
+            else if (motherYes.Contains("brother"))
+            {
+                Brother();
+            }
+            else if (motherYes.Contains("No"))
+            {
+                EndingNo();
+            }
+
+        }
+
+        static void EndingNo()
+        {
+            Console.WriteLine("");
+        }
+
+        static void Mother1No()
+        {
+            Console.WriteLine("Therapist: And from your viewpoint what is the problem with you're current relationship?");
+        }
+
+
+
+
+
+
+
+
         static void Father()
         {
-            Console.WriteLine("Therapist: Do you have a good relationship with you're Mother?");
+            Console.WriteLine("Therapist: And do you have a good relationship with you're Mother?");
             string father1 = Console.ReadLine().ToLower();
 
         }
 
         static void Brother()
         {
-            Console.WriteLine("Therapist: Do you have a good relationship with you're Mother?");
+            Console.WriteLine("Therapist: And do you have a good relationship with you're Mother?");
             string brother1 = Console.ReadLine().ToLower();
 
         }
 
         static void Sister()
         {
-            Console.WriteLine("Therapist: Do you have a good relationship with you're Sister?");
+            Console.WriteLine("Therapist: And do you have a good relationship with you're Sister?");
             string sister1 = Console.ReadLine().ToLower();
 
         }
 
-        static void FamilyOther()
+        static void endingNo()
         {
-            Console.WriteLine("Therapist: Do you consider this person a family member?");
-            string familyOther1 = Console.ReadLine().ToLower();
-            if (familyOther1.Contains("yes") || familyOther1.Contains("yeah"))
-                {
-                FamilyOtherYes();
-            }
-            else
-            {
-                Opener();
-            }
 
+            Console.WriteLine("Therapist: I'm afraid thats all the time we have for today");
+            Console.ReadLine();
         }
-
-        
-        static void FamilyOtherYes()
-        {
-            Console.WriteLine("Therapist: TO BE ADDED TOO");
-        }
-
+        // Glen's Code End
 
         static void Saniya()
         {
 
-            Console.WriteLine("Test friends");
+            Console.WriteLine("");
             Console.ReadLine();
 
 
@@ -152,14 +192,13 @@ namespace PPTeamProjectDGMS
 
             Console.WriteLine("Theripist: Ok, so what is the issue you have with the relationship?");
             string relationshipIssue = Console.ReadLine().ToLower();
-
             if (relationshipIssue.Contains("money") || relationshipIssue.Contains("financial") || relationshipIssue.Contains("bank account"))
             {
                 Money(yearsTogether);
             }
             else if (relationshipIssue.Contains("communcation") || relationshipIssue.Contains("talking"))
             {
-                Communication(yearsTogether);
+                //Communication();
             }
             else if (relationshipIssue.Contains("fight") || relationshipIssue.Contains("fighting") || relationshipIssue.Contains("contest"))
             {
@@ -176,7 +215,7 @@ namespace PPTeamProjectDGMS
             Console.WriteLine("Therapist: How many years has this been an issue?");
             int problemLength = Convert.ToInt32(Console.ReadLine());
 
-            if(yearsMarried < problemLength)
+            if (yearsMarried < problemLength)
             {
                 Console.WriteLine("Therapist: So this has been an issue for longer than you have been married.");
             }
@@ -184,53 +223,25 @@ namespace PPTeamProjectDGMS
             Console.WriteLine("Therapist: What spesificly is the issue with money");
             string moneyIssue = Console.ReadLine().ToLower().Trim();
 
-            if(moneyIssue.Contains("not enough") || moneyIssue.Contains("poor") || moneyIssue.Contains("need more") || moneyIssue.Contains("saving"))
+            if (moneyIssue.Contains("not enough") || moneyIssue.Contains("poor") || moneyIssue.Contains("need more") || moneyIssue.Contains("saving"))
             {
                 Console.WriteLine("Therapist: I suggest setting up a savings plan or possibly talking to your bank aboput your options");
             }
-            else if(moneyIssue.Contains("spends too much") || moneyIssue.Contains("dosent allow me to spend") || moneyIssue.Contains("restrictive") || moneyIssue.Contains("No acsess"))
+            else if (moneyIssue.Contains("spends too much") || moneyIssue.Contains("dosent allow me to spend") || moneyIssue.Contains("restrictive") || moneyIssue.Contains("No acsess"))
             {
                 Console.WriteLine("Therapist: I think you need to talk to your partner about being more fair with money");
             }
             else
             {
-                Console.WriteLine("Therapist: Im sorry, I dont think I can help you with that");
+                Console.WriteLine("Therapist: Im sorry, I dont think i can help you with that");
             }
-        }
-
-        static void Communication(int yearsMarried)
-        {
-            Console.WriteLine("Therapist: How many years has this been an issue?");
-            int problemLength = Convert.ToInt32(Console.ReadLine());
-
-            if (yearsMarried < problemLength)
-            {
-                Console.WriteLine("Therapist: So this has been an issue for longer than you have been married.");
-            }
-
-            Console.WriteLine("Therapist: What spesificly is the issue with communication");
-            string communicationIssue = Console.ReadLine().ToLower().Trim();
-
-            if (communicationIssue.Contains("dosent talk") || communicationIssue.Contains("silent") || communicationIssue.Contains("talk more") || communicationIssue.Contains("dosent say anything"))
-            {
-                Console.WriteLine("Therapist: I suggest that you take half an hour every night and talk to each other about you day");
-            }
-            else if (communicationIssue.Contains("talks too much") || communicationIssue.Contains("shut up") || communicationIssue.Contains("nagging") || communicationIssue.Contains("dosent stop talking"))
-            {
-                Console.WriteLine("Therapist: I would suggest spending more time apart than usual for a while week");
-            }
-            else
-            {
-                Console.WriteLine("Therapist: Im sorry, I dont think I can help you with that");
-            }
-
         }
 
         static void Dhugald()
         {
 
-           Console.WriteLine("Test other");
-           Console.ReadLine();
+            Console.WriteLine("Test other");
+            Console.ReadLine();
 
         }
 
